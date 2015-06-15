@@ -1,0 +1,188 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2011
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-01-08 09:15+Mountain Standard Time\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: SPSSINC_COMPARE_DATASETS.py:113
+msgid "---"
+msgstr "---"
+
+#: SPSSINC_COMPARE_DATASETS.py:131
+msgid "Warnings "
+msgstr "Avisos "
+
+#: SPSSINC_COMPARE_DATASETS.py:147 SPSSINC_COMPARE_DATASETS.py:205
+msgid ""
+"The following required parameters were not supplied:\n"
+msgstr ""
+"Os seguintes parâmetros obrigatórios não foram fornecidos:\n"
+
+#: SPSSINC_COMPARE_DATASETS.py:162
+msgid "IBM SPSS Statistics error, possibly invalid dataset name (case matters)"
+msgstr "Erro do IBM SPSS Statistics; nome de conjunto de dados possivelmente inválido (letras maiúsculas/minúsculas são diferenciadas)"
+
+#: SPSSINC_COMPARE_DATASETS.py:219
+msgid "This module requires at least SPSS Statistics 17"
+msgstr "Este módulo requer no mínimo o SPSS Statistics 17"
+
+#: SPSSINC_COMPARE_DATASETS.py:391
+msgid "format"
+msgstr "formato"
+
+#: SPSSINC_COMPARE_DATASETS.py:391
+msgid "type"
+msgstr "tipo"
+
+#: SPSSINC_COMPARE_DATASETS.py:391
+msgid "variable label"
+msgstr "rótulo de variável"
+
+#: SPSSINC_COMPARE_DATASETS.py:392
+msgid "missing values"
+msgstr "valores ausentes"
+
+#: SPSSINC_COMPARE_DATASETS.py:392
+msgid "value labels"
+msgstr "rótulos de valor"
+
+#: SPSSINC_COMPARE_DATASETS.py:393
+msgid "attributes"
+msgstr "atributos"
+
+#: SPSSINC_COMPARE_DATASETS.py:393
+msgid "measurement level"
+msgstr "nível de medição"
+
+#: SPSSINC_COMPARE_DATASETS.py:394
+msgid "alignment"
+msgstr "alinhamento"
+
+#: SPSSINC_COMPARE_DATASETS.py:394
+msgid "column width"
+msgstr "largura da coluna"
+
+#: SPSSINC_COMPARE_DATASETS.py:394
+msgid "index"
+msgstr "índice"
+
+#: SPSSINC_COMPARE_DATASETS.py:416
+msgid "Active Dataset"
+msgstr "Conjunto de dados ativo"
+
+#: SPSSINC_COMPARE_DATASETS.py:425
+msgid "Comparison of Datasets %s and %s."
+msgstr "Comparação dos conjuntos de dados %s e %s."
+
+#: SPSSINC_COMPARE_DATASETS.py:427
+msgid ""
+"\n"
+"Selected Variables"
+msgstr ""
+"\n"
+"Variáveis selecionadas"
+
+#: SPSSINC_COMPARE_DATASETS.py:433
+msgid "A dataset cannot be compared to itself"
+msgstr "Um conjunto de dados não pode ser comparado a si mesmo"
+
+#: SPSSINC_COMPARE_DATASETS.py:443
+msgid "Warning: the following requested variables to be compared are not present in both datasets and will be omitted."
+msgstr "Aviso: as seguintes variáveis solicitadas para comparação não estão presentes em ambos os conjuntos de dados e serão omitidas."
+
+#: SPSSINC_COMPARE_DATASETS.py:449
+msgid "Warning: the following variables are present in only one dataset and will be ignored."
+msgstr "Aviso: as seguintes variáveis estão presentes em apenas um conjunto de dados e serão ignoradas."
+
+#: SPSSINC_COMPARE_DATASETS.py:453
+msgid "There are no variables to compare"
+msgstr "Não há variáveis a serem comparadas"
+
+#: SPSSINC_COMPARE_DATASETS.py:465
+msgid "Count of Value Differences for %d Variables"
+msgstr "Contagem de diferenças de valor para variáveis %d"
+
+#: SPSSINC_COMPARE_DATASETS.py:470
+msgid "diffcount variable already exists or invalid name: %s"
+msgstr "A variável diffcount já existe ou o nome é inválido: %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:481
+msgid "Difference for Variable %s"
+msgstr "Diferença para variável %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:490
+msgid "The ID variable specified was not found: %s"
+msgstr "A variável da ID especificada não foi encontrada: %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:495
+msgid "Comparison of Cases"
+msgstr "Comparação de casos"
+
+#: SPSSINC_COMPARE_DATASETS.py:495
+msgid "Count"
+msgstr "Contagem"
+
+#: SPSSINC_COMPARE_DATASETS.py:497
+msgid "No ID variable was specified.  Cases cannot be compared."
+msgstr "Nenhuma variável de ID foi especificada.  Não é possível comparar os casos."
+
+#: SPSSINC_COMPARE_DATASETS.py:515 SPSSINC_COMPARE_DATASETS.py:524
+msgid "Duplicate or out of order ID value found in %s.  Processing Stopped"
+msgstr "Valor de ID duplicado ou fora de ordem encontrado em %s. Processamento interrompido"
+
+#: SPSSINC_COMPARE_DATASETS.py:561
+msgid "Cases in Dataset %s"
+msgstr "Casos no conjunto de dados %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:562
+msgid "Cases not Matched with Dataset %s"
+msgstr "Os casos não correspondem ao conjunto de dados %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:564
+msgid "Dataset %s count of cases not in dataset %s at least"
+msgstr "A contagem de casos do conjunto de dados %s não está no conjunto de dados %s no mínimo"
+
+#: SPSSINC_COMPARE_DATASETS.py:565
+msgid "Cases with Value Differences"
+msgstr "Casos com diferenças de valor"
+
+#: SPSSINC_COMPARE_DATASETS.py:613
+msgid "Comparisons: "
+msgstr "Comparações: "
+
+#: SPSSINC_COMPARE_DATASETS.py:614
+msgid "Comparison of Variable Dictionaries"
+msgstr "Comparação de dicionários de variável"
+
+#: SPSSINC_COMPARE_DATASETS.py:615
+msgid "Properties That Differ"
+msgstr "Propriedades que diferem"
+
+#: SPSSINC_COMPARE_DATASETS.py:629
+msgid "Variables with Differences"
+msgstr "Variáveis com diferenças"
+
+msgid "Compare datasets"
+msgstr "Comparar conjuntos de dados"
