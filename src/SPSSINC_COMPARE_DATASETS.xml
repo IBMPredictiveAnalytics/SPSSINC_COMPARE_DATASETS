@@ -1,0 +1,43 @@
+
+<!-- ***************************************************************** -->
+<!--                                                                   -->
+<!-- Licensed Materials - Property of IBM                              -->
+<!--                                                                   -->
+<!-- IBM SPSS Products: Statistics Common                              -->
+<!--                                                                   -->
+<!-- (C) Copyright IBM Corp. 1989, 2011                                -->
+<!--                                                                   -->
+<!-- US Government Users Restricted Rights - Use, duplication or       -->
+<!-- disclosure restricted by GSA ADP Schedule Contract with IBM       -->
+<!-- Corp.                                                             -->
+<!--                                                                   -->
+<!-- ***************************************************************** -->
+
+<Command xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extension.xsd" Name="SPSSINC COMPARE DATASETS" Language="Python">
+	<Subcommand Name="" IsArbitrary="False" Occurrence="Optional">
+		<Parameter Name="DS1" ParameterType="DatasetName"/>
+		<Parameter Name="DS2" ParameterType="DatasetName"/>
+		<Parameter Name="HELP" ParameterType="LeadingToken"/>
+		<Parameter Name="VARIABLES" ParameterType="VariableNameList"/>
+	</Subcommand>
+	<Subcommand Name="DATA">
+		<Parameter Name="ID" ParameterType="VariableName"/>
+		<Parameter Name="DIFFCOUNT" ParameterType="VariableName"/>
+		<Parameter Name="ROOTNAME" ParameterType="VariableName"/>
+		<Parameter Name="LOGFILE" ParameterType="OutputFile"/>
+	</Subcommand>
+	<Subcommand Name="DICTIONARY">
+		<Parameter Name="NONE" ParameterType="LeadingToken"/>
+		<Parameter Name="MEASLEVEL" ParameterType="LeadingToken"/>
+		<Parameter Name="TYPE" ParameterType="LeadingToken"/>
+		<Parameter Name="VARLABEL" ParameterType="LeadingToken"/>
+		<Parameter Name="FORMAT" ParameterType="LeadingToken"/>
+		<Parameter Name="MISSINGVALUES" ParameterType="LeadingToken"/>
+		<Parameter Name="VALUELABELS" ParameterType="LeadingToken"/>
+		<Parameter Name="ATTRIBUTES" ParameterType="LeadingToken"/>
+		<Parameter Name="ALIGNMENT" ParameterType="LeadingToken"/>
+		<Parameter Name="COLUMNWIDTH" ParameterType="LeadingToken"/>
+		<Parameter Name="INDEX" ParameterType="LeadingToken"/>
+	</Subcommand>
+	<Subcommand Name="HELP" Occurrence="Optional"/>
+</Command>
