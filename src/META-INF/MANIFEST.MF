@@ -1,0 +1,16 @@
+Name: SPSSINC COMPARE DATASETS
+Dialog-Specs: SPSSINC_COMPARE_DATASETS.spd
+Command-Specs: SPSSINC_COMPARE_DATASETS.xml
+Code-Files: comparedatasets17.py,SPSSINC_COMPARE_DATASETS.py
+Misc-Files: notices_SPSSINC_COMPARE_DATASETS.txt,markdown.html
+Summary: Compare two open datasets.
+Description: This procedure compares two open datasets. You can specif
+ y whether the comparison includes the case data, the variable propert
+ ies or both.
+Author: IBM SPSS
+Version: 1.1.5
+Product-Version: 18
+Date: 6/9/2011
+Categories: Extension Commands, Python
+Plugins: Python
+Translation-Catalogues: lang
