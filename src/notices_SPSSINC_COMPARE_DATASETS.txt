@@ -1,0 +1,57 @@
+NOTICES AND INFORMATION
+
+IBM SPSS Supplementary Modules - SPSSINC_COMPARE_DATASETS
+
+The IBM license agreement and any applicable information on the web
+download page for IBM products refers Licensee to this file for details
+concerning notices applicable to code included in the products listed
+above ("the Program").
+
+Notwithstanding the terms and conditions of any other agreement Licensee
+may have with IBM or any of its related or affiliated entities
+(collectively "IBM"), the third party code identified below is subject
+to the terms and conditions of the IBM license agreement for the Program
+and not the license terms that may be contained in the notices below.
+The notices are provided for informational purposes.
+
+Please note: This Notices file may identify information that is not used
+by, or that was not shipped with, the Program as Licensee installed it.
+
+IMPORTANT: IBM does not represent or warrant that the information in this
+NOTICES file is accurate. Third party websites are independent of IBM and
+IBM does not represent or warrant that the information on any third party
+website referenced in this NOTICES file is accurate. IBM disclaims any
+and all liability for errors and omissions or for any damages accruing
+from the use of this NOTICES file or its contents, including without
+limitation URLs or references to any third party websites.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The Program includes the following "Unique Permission License - Python cookbook, 2d
+edition" software:
+
+attributesFromDict.py 2005
+
+Python Cookbook, 2d ed.,by Alex Martelli, Anna Martelli, Ravenscroft and David Ascher
+(O'Reilly Media,2005) 0-596-00797-3
+This book is here to help you get your job done. In general, you may use the code in this
+book in your programs and documentation. You do not need need to contact us for permission
+unless you're reproducing a significant portion of the code. For example, writing a program
+that uses several chunks of code from this book does not require permission. Selling or
+distributing a CD-ROM of code taken from O'Reilly books does require permission. Answering
+a question by citing this book and quoting example code does not require permission.
+Incoroporating a significant amount of code into your product's documentation does require
+permission. We appreciate, but do not require attribution. An attribution usually includes
+the title, author, publisher and ISBN. For example "Python Cookbook, 2d ed.,by Alex
+Martelli, Anna Martelli, Ravenscroft and David Ascher (O'Reilly Media,2005) 0-596-00797-3"
+If you feel your use of code from this falls outside fair use or the permission given
+above, feel free to contact us at:
+IBM obtained the information at the following location:
+http://books.google.co.uk/books?id=Q0s6Vgb98CQC&printsec=frontcover&dq=Python+Cookbook
++recipes%2BAlex
++Martelli&source=bl&ots=hc5-56UipE&sig=I4lCa-1mQ3t_GA1WDWKGL3TED4M&hl=en&ei=yHibTMHdEIKbOPwpN8F&
+sa=X&oi=book_result&ct=result&resnum=7&ved=0CDkQ6AEwBg#v=onepage&q=Python%20Cookbook
+%20recipes%2BAlex%20Martelli&f=false
+
+**************************************************************************
+
+END of NOTICES AND INFORMATION 
