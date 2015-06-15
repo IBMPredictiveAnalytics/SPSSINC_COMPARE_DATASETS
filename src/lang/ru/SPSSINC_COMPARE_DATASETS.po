@@ -1,0 +1,188 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2011
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-01-08 09:15+Mountain Standard Time\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: SPSSINC_COMPARE_DATASETS.py:113
+msgid "---"
+msgstr "---"
+
+#: SPSSINC_COMPARE_DATASETS.py:131
+msgid "Warnings "
+msgstr "Предупреждения "
+
+#: SPSSINC_COMPARE_DATASETS.py:147 SPSSINC_COMPARE_DATASETS.py:205
+msgid ""
+"The following required parameters were not supplied:\n"
+msgstr ""
+"Отсутствует следующий обязательный параметр:\n"
+
+#: SPSSINC_COMPARE_DATASETS.py:162
+msgid "IBM SPSS Statistics error, possibly invalid dataset name (case matters)"
+msgstr "Ошибка IBM SPSS Statistics, возможно, неверное имя набора данных (регистр важен)"
+
+#: SPSSINC_COMPARE_DATASETS.py:219
+msgid "This module requires at least SPSS Statistics 17"
+msgstr "Данный модуль требует, по крайней мере, SPSS Statistics 17"
+
+#: SPSSINC_COMPARE_DATASETS.py:391
+msgid "format"
+msgstr "формат"
+
+#: SPSSINC_COMPARE_DATASETS.py:391
+msgid "type"
+msgstr "тип"
+
+#: SPSSINC_COMPARE_DATASETS.py:391
+msgid "variable label"
+msgstr "метка переменной"
+
+#: SPSSINC_COMPARE_DATASETS.py:392
+msgid "missing values"
+msgstr "пропущенные значения"
+
+#: SPSSINC_COMPARE_DATASETS.py:392
+msgid "value labels"
+msgstr "метки значений"
+
+#: SPSSINC_COMPARE_DATASETS.py:393
+msgid "attributes"
+msgstr "атрибуты"
+
+#: SPSSINC_COMPARE_DATASETS.py:393
+msgid "measurement level"
+msgstr "тип измерений"
+
+#: SPSSINC_COMPARE_DATASETS.py:394
+msgid "alignment"
+msgstr "выравнивание"
+
+#: SPSSINC_COMPARE_DATASETS.py:394
+msgid "column width"
+msgstr "ширина столбца"
+
+#: SPSSINC_COMPARE_DATASETS.py:394
+msgid "index"
+msgstr "индекс"
+
+#: SPSSINC_COMPARE_DATASETS.py:416
+msgid "Active Dataset"
+msgstr "Активный набор данных"
+
+#: SPSSINC_COMPARE_DATASETS.py:425
+msgid "Comparison of Datasets %s and %s."
+msgstr "Сравнение наборов данных %s and %s."
+
+#: SPSSINC_COMPARE_DATASETS.py:427
+msgid ""
+"\n"
+"Selected Variables"
+msgstr ""
+"\n"
+"Выбранные переменные"
+
+#: SPSSINC_COMPARE_DATASETS.py:433
+msgid "A dataset cannot be compared to itself"
+msgstr "Набор данных нельзя сравнить с самим собой"
+
+#: SPSSINC_COMPARE_DATASETS.py:443
+msgid "Warning: the following requested variables to be compared are not present in both datasets and will be omitted."
+msgstr "Предупреждение: следующие запрошенные для сравнения переменные не присутствуют в обоих наборах данных и будут пропущены."
+
+#: SPSSINC_COMPARE_DATASETS.py:449
+msgid "Warning: the following variables are present in only one dataset and will be ignored."
+msgstr "Предупреждение: следующие переменные присутствуют только в одном наборе данных и будут проигнорированы."
+
+#: SPSSINC_COMPARE_DATASETS.py:453
+msgid "There are no variables to compare"
+msgstr "Переменные для сравнения отсутствуют"
+
+#: SPSSINC_COMPARE_DATASETS.py:465
+msgid "Count of Value Differences for %d Variables"
+msgstr "Число различий в значениях для переменных %d"
+
+#: SPSSINC_COMPARE_DATASETS.py:470
+msgid "diffcount variable already exists or invalid name: %s"
+msgstr "переменная числа различий уже существует или неверное имя: %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:481
+msgid "Difference for Variable %s"
+msgstr "Различие для переменной %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:490
+msgid "The ID variable specified was not found: %s"
+msgstr "Заданная идентификационная переменная не была найдена: %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:495
+msgid "Comparison of Cases"
+msgstr "Сравнение наблюдений"
+
+#: SPSSINC_COMPARE_DATASETS.py:495
+msgid "Count"
+msgstr "Число"
+
+#: SPSSINC_COMPARE_DATASETS.py:497
+msgid "No ID variable was specified.  Cases cannot be compared."
+msgstr "Идентификационная переменная не была задана.  Наблюдения невозможно сравнить."
+
+#: SPSSINC_COMPARE_DATASETS.py:515 SPSSINC_COMPARE_DATASETS.py:524
+msgid "Duplicate or out of order ID value found in %s.  Processing Stopped"
+msgstr "В %s обнаружено дублирующее или нарушающее порядок идентифицирующее значение. Обработка прекращена"
+
+#: SPSSINC_COMPARE_DATASETS.py:561
+msgid "Cases in Dataset %s"
+msgstr "Наблюдения в наборе данных %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:562
+msgid "Cases not Matched with Dataset %s"
+msgstr "Наблюдения, не согласующиеся с набором данных %s"
+
+#: SPSSINC_COMPARE_DATASETS.py:564
+msgid "Dataset %s count of cases not in dataset %s at least"
+msgstr "Число наблюдений набора данных %s, которые не содержатся в наборе данных %s, по крайней мере"
+
+#: SPSSINC_COMPARE_DATASETS.py:565
+msgid "Cases with Value Differences"
+msgstr "Наблюдения с различием значений"
+
+#: SPSSINC_COMPARE_DATASETS.py:613
+msgid "Comparisons: "
+msgstr "Сравнения: "
+
+#: SPSSINC_COMPARE_DATASETS.py:614
+msgid "Comparison of Variable Dictionaries"
+msgstr "Сравнение словарей переменных"
+
+#: SPSSINC_COMPARE_DATASETS.py:615
+msgid "Properties That Differ"
+msgstr "Свойства, которые различаются"
+
+#: SPSSINC_COMPARE_DATASETS.py:629
+msgid "Variables with Differences"
+msgstr "Переменные с различиями"
+
+msgid "Compare datasets"
+msgstr "Сравнить наборы данных"
