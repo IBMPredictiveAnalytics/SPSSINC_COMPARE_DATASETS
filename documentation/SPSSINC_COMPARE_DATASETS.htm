@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Compare Datasets</title>
+<STYLE TYPE="text/css"> 
+<!-- 
+
+H1 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:125%; }
+H2 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:110%; }
+BODY {font-family:Verdana, Arial, sans-serif;font-size:80%; }
+TABLE {font-size:100%;font-family:Verdana, Arial, sans-serif;}
+
+/* paragraph tags */
+.step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+.step-glyph { font-family: Arial, Helvetica, sans-serif; }
+.menuselection {margin-left:10px}
+.bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+.codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;font-family:"courier new",monospace; }
+
+/* inline tags */
+.code {font-family: Courier,fixed pitch;}                           /*** used to tag pieces of code (syntax, Python, R, HTML, etc.)   ***/
+.screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+.name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+.runinhead {font-weight: bold} 
+.superscript {vertical-align:super; font-size:80%}
+.subscript {vertical-align:sub; font-size:80%}
+.symbol {font-family: Symbol}
+
+--> 
+</STYLE>
+</head>
+<body>
+<h1>Compare Datasets</h1>
+This procedure compares the cases and/or variable dictionaries
+of two open datasets.  Both must have names.
+<p>Check the <i>Compare cases</i> box to compare the data in
+the two datasets.  Check the <i>Compare dictionary properties</i> box
+to compare selected properties of the variables.  If neither
+box is checked, there will be no output.
+<p>
+Enter the dataset names of the primary and secondary datasets in
+the boxes provided.  Any requested case comparison information will
+be written to the primary dataset.
+<p>If comparing cases, enter the name of a case id variable present
+in both datasets.  Both datasets must be sorted ascending by the ID
+variable.
+<p>
+Enter the name of a new variable in the <i>New Variable to Hold
+Difference Count</i> field to produce a variable whose values are the
+number of differences in the variables compared for each case.
+If a case from the primary dataset is not present in the secondary
+dataset, the count value will be missing.
+<p>A summary report of the differences is written to the Viewer, but the details
+are only written to the primary dataset.
+<p>If a root name is entered in the <i>Root Name for New Variables</i>
+field, a new variable with a name starting with the specified root will be created
+for each variable compared.  The values will be 0 or 1 according to whether
+the variable values are equal or not.
+<p>Enter a filename in the <i>Log file</i> file to produce a text file listing
+the detailed differences between the two files.  It will list case ids present in only
+one dataset and all value differences for the selected variables.
+<p>
+If the variable dictionaries are to be compared, check one or more
+properties to compare.  A report will be written to the Viewer showing
+where any differences are.
+
+<h2>Additional Features</h2>
+<p>
+This dialog generates syntax for the SPSSINC COMPARE DATASETS extension command. To display help for this command,
+run the following syntax:
+</p>
+<p class="codeblock">SPSSINC COMPARE DATASETS /HELP.</p>
+
+<h2>Requirements</h2>
+<p>This dialog requires the Integration Plug-In for Python and the SPSSINC COMPARE DATASETS extension command. For IBM® SPSS® Statistics 19 and higher, 
+the Plug-In and the extension command are installed with the Essentials for Python package. For more information, see How to Get Integration Plug-Ins, 
+under Core System > Frequently Asked Questions in the IBM SPSS Statistics Help system. If you downloaded SPSSINC COMPARE DATASETS  
+from the SPSS Community, then please follow the instructions in the associated readme file. </p>
+<br/>
+<hr/>
+<p style="font-family:Verdana, Arial, sans-serif;font-size:80%;">© Copyright IBM Corp. 1989, 2011</p>
+
+
