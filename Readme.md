@@ -1,11 +1,13 @@
 # SPSSINC COMPARE DATASETS
 ## Compare two open datasets.
- This procedure compares two open datasets. You can specif  y whether the comparison includes the case data, the variable propert  ies or both.
+ This procedure compares two open datasets. You can specify whether the comparison includes the case data, the variable properties or both.
 
 ---
 Requirements
 ----
-- IBM SPSS Statistics 18 or later
+- IBM SPSS Statistics 18 or later and the corresponding IBM SPSS Statistics-Integration Plug-in for Python.
+
+Note: For users with IBM SPSS Statistics versions 19, 20 or 21, the SPSSINC COMPARE DATASETS extension is installed as part of IBM SPSS Statistics-Essentials for Python. For users with IBM SPSS Statistics version 21 or higher, consider using the built-in COMPARE DATASETS command.
 
 ---
 Installation intructions
