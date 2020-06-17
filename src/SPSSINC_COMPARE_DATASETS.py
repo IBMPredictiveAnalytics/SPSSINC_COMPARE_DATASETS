@@ -3,13 +3,13 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 1989, 2014
+# * (C) Copyright IBM Corp. 1989, 2020
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
 # ************************************************************************/
 
-from __future__ import with_statement
+
 
 #try:
     #import wingdbstub
@@ -92,7 +92,7 @@ def Run(args):
 
 
     ###print args   #debug
-    args = args[args.keys()[0]]
+    args = args[list(args.keys())[0]]
 
     # Note that the keys of args are the names of the subcommands that were given.
 
@@ -132,8 +132,8 @@ def Run(args):
             return msg
 
     # A HELP subcommand overrides all else
-    if args.has_key("HELP"):
-        print helptext
+    if "HELP" in args:
+        print(helptext)
     else:
         # parse and execute the command
         try:
@@ -147,7 +147,7 @@ def Run(args):
             warnings = NonProcPivotTable("Warnings",tabletitle=_("Warnings "))
             oobj.parsecmd(args, vardict = spssaux.VariableDict())
             if spss.PyInvokeSpss.IsUTF8mode():
-                unistr = unicode
+                unistr = str
             else:
                 unistr = str
 
@@ -235,7 +235,7 @@ if spssaux.getSpssMajorVersion() < 17:
     raise ImportError(_("This module requires at least SPSS Statistics 17"))
 
 if spss.PyInvokeSpss.IsUTF8mode():
-    unistr = unicode
+    unistr = str
 else:
     unistr = str
 
@@ -316,7 +316,7 @@ class Difflog(object):
             # log file is written in utf-8, which may require transcoding.
             if spss.PyInvokeSpss.IsUTF8mode():
                 inputencoding = "unicode_internal"
-                self.ls = unicode(os.linesep)
+                self.ls = str(os.linesep)
             else:
                 inputencoding = locale.getlocale()[1]
                 self.ls = os.linesep
@@ -424,8 +424,8 @@ class CompareDatasets(object):
             self.variables = None
         self.reportroot = reportroot
         if reportroot:
-            self.unicode = spss.PyInvokeSpss.IsUTF8mode()
-            if self.unicode:
+            self.str = spss.PyInvokeSpss.IsUTF8mode()
+            if self.str:
                 self.ec = codecs.getencoder("utf_8")   # in Unicode mode, must figure var names in bytes of utf-8
         self.reportnames = []
         if self.ds1 == "*":
@@ -434,10 +434,10 @@ class CompareDatasets(object):
             dsname = self.ds1
         udsname = dsname
         uds2 = self.ds2
-        if not isinstance(udsname, unicode):
-            udsname = unicode(udsname, self.encoding)
-        if not isinstance(uds2, unicode):
-            uds2 = unicode(uds2, self.encoding)
+        if not isinstance(udsname, str):
+            udsname = str(udsname, self.encoding)
+        if not isinstance(uds2, str):
+            uds2 = str(uds2, self.encoding)
         self.title = _("Comparison of Datasets %s and %s.") % (udsname, uds2)
         if variables:
             self.title += _("\nSelected Variables")
@@ -481,8 +481,8 @@ class CompareDatasets(object):
                         self.ds1obj.varlist[diffcount].label = _("Count of Value Differences for %d Variables") % self.numvars
                         self.ds1obj.varlist[diffcount].format = (5,4,0)
                     except:
-                        if not isinstance(diffcount, unicode):
-                            diffcount = unicode(diffcount, self.encoding)
+                        if not isinstance(diffcount, str):
+                            diffcount = str(diffcount, self.encoding)
                         raise ValueError(_("diffcount variable already exists or invalid name: %s") % diffcount)
                 if reportroot:
                     self.reportstart = len(self.ds1obj)
@@ -492,8 +492,8 @@ class CompareDatasets(object):
                         if not self.idvar == self.variables[i]:
                             self.ds1obj.varlist.append(self._rptname( i, nameset))
                             vv = self.variables[i]
-                            if not isinstance(vv, unicode):
-                                vv = unicode(vv, self.encoding)
+                            if not isinstance(vv, str):
+                                vv = str(vv, self.encoding)
                             self.ds1obj.varlist[self.reportstart + ij].label = _("Difference for Variable %s") % vv
                             self.ds1obj.varlist[self.reportstart + ij].format = (5,1,0)
                             ij+= 1
@@ -501,8 +501,8 @@ class CompareDatasets(object):
                     self.id1 = self.ds1obj.varlist[idvar].index
                     self.id2 = self.ds2obj.varlist[idvar].index
                 except:
-                    if not isinstance(idvar, unicode):
-                        idvar = unicode(idvar, self.encoding)
+                    if not isinstance(idvar, str):
+                        idvar = str(idvar, self.encoding)
                     raise ValueError(_("The ID variable specified was not found: %s") % idvar)
         
     def cases(self):
@@ -512,8 +512,8 @@ class CompareDatasets(object):
         if not self.idvar:
             raise ValueError(_("No ID variable was specified.  Cases cannot be compared."))
         i = 0
-        prevcasenum1 = None
-        prevcasenum2 = None
+        prevcasenum1 = 0
+        prevcasenum2 = 0
         unmatchedKt = 0
         ds2extra = 0
         casediffs = 0
@@ -524,8 +524,8 @@ class CompareDatasets(object):
             case2 = self.ds2obj.cases[i]
             for casenum, case1 in enumerate(self.ds1obj.cases):
                 if case1[self.id1] <= prevcasenum1:
-                    if not isinstance(self.ds1, unicode):
-                        uds1 = unicode(self.ds1, self.encoding)
+                    if not isinstance(self.ds1, str):
+                        uds1 = str(self.ds1, self.encoding)
                     else:
                         uds1 = self.ds1
                     raise ValueError(_("""Duplicate or out of order ID value found in %s. Processing Stopped 
@@ -536,8 +536,8 @@ Case: %s, ID: %s. """) % (uds1, casenum+1, case1[self.id1]))
                     while case2[self.id2] < case1[self.id1]:
                         if case2[self.id2] <= prevcasenum2:
                             uds2 = self.ds2
-                            if not isinstance(uds2, unicode):
-                                uds2 = unicode(uds2, self.encoding)
+                            if not isinstance(uds2, str):
+                                uds2 = str(uds2, self.encoding)
                             raise ValueError(_("""Duplicate or out of order ID value found in %s.
                     Processing Stopped
 ID: %s. """) % (uds2, case2[self.id2]))
@@ -573,10 +573,10 @@ ID: %s. """) % (uds2, case2[self.id2]))
             except:
                 pass
         uds1, uds2 = self.ds1, self.ds2
-        if not isinstance(uds1, unicode):
-            uds1 = unicode(uds1, self.encoding)
-        if not isinstance(uds2, unicode):
-            uds2 = unicode(uds2, self.encoding)
+        if not isinstance(uds1, str):
+            uds1 = str(uds1, self.encoding)
+        if not isinstance(uds2, str):
+            uds2 = str(uds2, self.encoding)
         self.casetable.addrow(_("Cases in Dataset %s") % uds1, ["%d" % (casenum+1)])
         self.casetable.addrow(_("Cases not Matched with Dataset %s") % uds2, ["%d" % unmatchedKt])
         if ds2extra > 0:
@@ -627,7 +627,7 @@ ID: %s. """) % (uds2, case2[self.id2]))
         self.infooptions = locals().copy()
         del(self.infooptions['self'])
         del(self.infooptions['report'])
-        caption = ", ".join([self.attrnames[k] for k,v in self.infooptions.items() if v])
+        caption = ", ".join([self.attrnames[k] for k,v in list(self.infooptions.items()) if v])
         if caption:
             caption = "\n".join(textwrap.wrap(_("Comparisons: ") + caption, 50))
         self.dicttable = NonProcPivotTable("dictcomparison", tabletitle =_("Comparison of Variable Dictionaries"),
@@ -664,7 +664,7 @@ ID: %s. """) % (uds2, case2[self.id2]))
                 continue
             val = case1[self.vindex1[v]]
             
-            if isinstance(val, basestring):
+            if isinstance(val, str):
                 val1 = val.rstrip()
                 # If first value is a string, the second could be numeric, which would raise an exception.
                 # Those values should be considered to be different
@@ -727,7 +727,7 @@ ID: %s. """) % (uds2, case2[self.id2]))
         the utf-8 byte representation must be used to figure this out but still truncate on a character
         boundary."""
         
-        if not self.unicode:
+        if not self.str:
             name =  name[:maxlength]
         else:
             newname = []
@@ -752,7 +752,7 @@ def attributesFromDict(d):
     # based on Python Cookbook, 2nd edition 6.18
     
     self = d.pop('self')
-    for name, value in d.iteritems():
+    for name, value in d.items():
         setattr(self, name, value)
 
 def StartProcedure(procname, omsid):
@@ -786,7 +786,7 @@ def helper():
     # webbrowser.open seems not to work well
     browser = webbrowser.get()
     if not browser.open_new(helpspec):
-        print("Help file not found:" + helpspec)
+        print(("Help file not found:" + helpspec))
 try:    #override
     from extension import helper
 except:

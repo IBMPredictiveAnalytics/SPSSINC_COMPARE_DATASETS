@@ -8,9 +8,11 @@ Description: This procedure compares two open datasets. You can specif
  y whether the comparison includes the case data, the variable propert
  ies or both.
 Author: IBM SPSS
-Version: 1.1.5
-Product-Version: 18
+Version: 2.0.0
+Product-Version: 24
 Date: 6/9/2011
+Product-Version-Maximum: 99
 Categories: Extension Commands, Python
 Plugins: Python
+Python-Version: 3
 Translation-Catalogues: lang

@@ -3,13 +3,13 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 1989, 2011
+# * (C) Copyright IBM Corp. 1989, 2020
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
 # ************************************************************************/
 
-from __future__ import with_statement
+
 
 """Compare two datasets variable by variable.  It can compare cases and/or variables.
 This module requires at least SPSS 17.0.0."""
@@ -30,10 +30,10 @@ from spss import CellText
 ###import wingdbstub  ###debug
 
 if spssaux.getSpssMajorVersion() < 17:
-    raise ImportError, "This module requires at least SPSS Statistics 17"
+    raise ImportError("This module requires at least SPSS Statistics 17")
 
 if spss.PyInvokeSpss.IsUTF8mode():
-    unistr = unicode
+    unistr = str
 else:
     unistr = str
 
@@ -112,7 +112,7 @@ class Difflog(object):
             # log file is written in utf-8, which may require transcoding.
             if spss.PyInvokeSpss.IsUTF8mode():
                 inputencoding = "unicode_internal"
-                self.ls = unicode(os.linesep)
+                self.ls = str(os.linesep)
             else:
                 inputencoding = locale.getlocale()[1]
                 self.ls = os.linesep
@@ -209,8 +209,8 @@ class CompareDatasets(object):
             self.variables = None
         self.reportroot = reportroot
         if reportroot:
-            self.unicode = spss.PyInvokeSpss.IsUTF8mode()
-            if self.unicode:
+            self.str = spss.PyInvokeSpss.IsUTF8mode()
+            if self.str:
                 self.ec = codecs.getencoder("utf_8")   # in Unicode mode, must figure var names in bytes of utf-8
         self.reportnames = []
         if self.ds1 == "*":
@@ -245,7 +245,7 @@ class CompareDatasets(object):
                     self.warnings.addrow(", ".join(sorted(sd)))
                 self.variables = sorted(list(self.commonvars))
             if not self.variables:
-                raise ValueError,  "There are no variables to compare"
+                raise ValueError("There are no variables to compare")
             self.vindex1 = []
             self.vindex2 = []
             self.numvars = len(self.variables)
@@ -260,7 +260,7 @@ class CompareDatasets(object):
                         self.ds1obj.varlist[diffcount].label = "Count of Value Differences for %d Variables" % self.numvars
                         self.ds1obj.varlist[diffcount].format = (5,4,0)
                     except:
-                        raise ValueError, "diffcount variable already exists or invalid name: %s" % diffcount
+                        raise ValueError("diffcount variable already exists or invalid name: %s" % diffcount)
                 if reportroot:
                     self.reportstart = len(self.ds1obj)
                     nameset = set([v.name.lower() for v in self.ds1obj.varlist])
@@ -275,7 +275,7 @@ class CompareDatasets(object):
                     self.id1 = self.ds1obj.varlist[idvar].index
                     self.id2 = self.ds2obj.varlist[idvar].index
                 except:
-                    raise ValueError, "The ID variable specified was not found: %s" % idvar
+                    raise ValueError("The ID variable specified was not found: %s" % idvar)
         
     def cases(self):
         """Compare cases and return count of cases with differences."""
@@ -296,13 +296,13 @@ class CompareDatasets(object):
             case2 = self.ds2obj.cases[i]
             for casenum, case1 in enumerate(self.ds1obj.cases):
                 if case1[self.id1] <= prevcasenum1:
-                    raise ValueError, "Duplicate or out of order ID value found in %s.  Processing Stopped" % self.ds1
+                    raise ValueError("Duplicate or out of order ID value found in %s.  Processing Stopped" % self.ds1)
                 prevcasenum1 = case1[self.id1]
                 try:
                     i0 = 0
                     while case2[self.id2] < case1[self.id1]:
                         if case2[self.id2] <= prevcasenum2:
-                            raise ValueError, "Duplicate or out of order ID value found in %s.  Processing Stopped" % self.ds2
+                            raise ValueError("Duplicate or out of order ID value found in %s.  Processing Stopped" % self.ds2)
                         prevcasenum2 = case2[self.id2]
                         i+= 1
                         case2 = self.ds2obj.cases[i]
@@ -390,7 +390,7 @@ class CompareDatasets(object):
         self.infooptions = locals().copy()
         del(self.infooptions['self'])
         del(self.infooptions['report'])
-        caption = ", ".join([k for k,v in self.infooptions.items() if v])
+        caption = ", ".join([k for k,v in list(self.infooptions.items()) if v])
         if caption:
             caption = "\n".join(textwrap.wrap("Comparisons: " + caption, 50))
         self.dicttable = NonProcPivotTable("dictcomparison", tabletitle ="Comparison of Variable Dictionaries",
@@ -427,7 +427,7 @@ class CompareDatasets(object):
                 continue
             val = case1[self.vindex1[v]]
             
-            if isinstance(val, basestring):
+            if isinstance(val, str):
                 val1 = val.rstrip()
                 # If first value is a string, the second could be numeric, which would raise an exception.
                 # Those values should be considered to be different
@@ -490,7 +490,7 @@ class CompareDatasets(object):
         the utf-8 byte representation must be used to figure this out but still truncate on a character
         boundary."""
         
-        if not self.unicode:
+        if not self.str:
             name =  name[:maxlength]
         else:
             newname = []
@@ -515,5 +515,5 @@ def attributesFromDict(d):
     # based on Python Cookbook, 2nd edition 6.18
     
     self = d.pop('self')
-    for name, value in d.iteritems():
+    for name, value in d.items():
         setattr(self, name, value)
