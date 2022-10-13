@@ -1,4 +1,5 @@
 Name: SPSSINC COMPARE DATASETS
+Display-Name: Compare Datasets
 Dialog-Specs: SPSSINC_COMPARE_DATASETS.spd
 Command-Specs: SPSSINC_COMPARE_DATASETS.xml
 Code-Files: comparedatasets17.py,SPSSINC_COMPARE_DATASETS.py
